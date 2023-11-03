@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REST Countries API | shantam8</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="title-container">
+      <h1>Where in the world?</h1>
+      <button id="btn-toggle-dark-mode" class="dark-mode-container" aria-label="toggle dark mode">
+        <i class="bi bi-moon"></i>
+        Dark Mode
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="input-options-container">
+      <div class="input-container">
+        <i class="bi bi-search"></i>
+        <input id="input-field-country" type="text" placeholder="Search for a country..." />
+      </div>
+
+      <div id="region-selector-container">
+        <select id="countrySelect">
+          <option value="">Selecciona un país</option>
+          <option value="Spain">Spain</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany</option>
+          <option value="Italy">Italy</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <!-- Agrega más opciones según tus necesidades -->
+        </select>
+    </section>
+
+    <section id="countries-selection-box"></section>
+
+    <section id="country-details" class="display-none">
+      <button id="btn-leave-details" aria-label="back to main page">
+        <i class="bi bi-arrow-left"></i> Back
+      </button>
+
+      <div id="country-details-container">
+        <div>
+          <img id="country-detail-flag" src="#" alt="flag not loaded" />
+        </div>
+
+        <div class="country-detail-text">
+          <h2 id="country-detail-name"></h2>
+
+          <div class="country-detail-text-container">
+            <div class="text-container1">
+              <p>
+                <span>Native Name: </span>
+                <span id="detail-native-name"></span>
+              </p>
+              <p>
+                <span>Population: </span>
+                <span id="detail-population"></span>
+              </p>
+              <p><span>Region: </span><span id="detail-region"></span></p>
+              <p>
+                <span>Sub Region: </span>
+                <span id="detail-sub-region"></span>
+              </p>
+              <p><span>Capital: </span><span id="detail-capital">Ul</span></p>
+            </div>
+            <div class="text-container2">
+              <p>
+                <span>Top Level Domain: </span>
+                <span id="detail-tld"></span>
+              </p>
+              <p>
+                <span>Currencies: </span>
+                <span id="detail-currency"></span>
+              </p>
+              <p>
+                <span>Languages: </span>
+                <span id="detail-languages"></span>
+              </p>
+            </div>
+          </div>
+
+          <h3>Border Countries:</h3>
+          <div id="border-countries-container"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
