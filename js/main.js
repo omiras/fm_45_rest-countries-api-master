@@ -4,6 +4,7 @@ let btnToggleDarkMode = document.querySelector("#btn-toggle-dark-mode");
 // Nada más cargar la página tenemos que mostrar todos los paises, vamos a
 
 let inputSearch = document.querySelector("#input-field-country");
+let selectRegion = document.querySelector("#countrySelect");
 
 /**
  * Esta función la vamos a utilizar para actualizar el DOM con todos los paises del array countries
@@ -28,6 +29,13 @@ function updateCountries(countries) {
     document.querySelector("#countries-selection-box").appendChild(country);
   });
 }
+
+selectRegion.addEventListener("change", function (event) {
+  console.log("El valor del selector ha cambiado a: ", selectRegion.value);
+  console.log("El valor del selector ha cambiado a: ", event.target.value);
+
+  //TODO: filtrar el array de countries con todos los paises que pertenecen a la región escogida por el usuario
+});
 
 inputSearch.addEventListener("input", function (event) {
   // Hemos detectado que ha cambiado el valor el input
