@@ -30,11 +30,31 @@ function updateCountries(countries) {
   });
 }
 
+function filterCountries(countries) {
+  const filteredCountries = countries.filter((c) => {
+    return (
+      c.region == selectRegion.value &&
+      c.name.common.toLowerCase().includes(inputSearch.value.toLowerCase())
+    );
+  });
+  return filteredCountries;
+}
+
 selectRegion.addEventListener("change", function (event) {
   console.log("El valor del selector ha cambiado a: ", selectRegion.value);
   console.log("El valor del selector ha cambiado a: ", event.target.value);
 
   //TODO: filtrar el array de countries con todos los paises que pertenecen a la región escogida por el usuario
+
+  // Teneis que filtrar todos los paises de forma muy similar a lo que hemos hecho justo en el listener de abajo. Copiad las 3 líneas de la función y adaptarlas a este filtro
+
+  document.querySelector("#countries-selection-box").innerHTML = "";
+
+  // 2. Tenemos que utilizar adecuadamente el método filter para mirar si el campo c.name.official incluye el substring de inputSearch.value
+
+  // Corregir 10.40 -> Usa el método filter adecuadamente para filtrar por region. Solo hemos de modificar esta parte:
+  const filteredCountries = filterCountries(countries);
+  updateCountries(filteredCountries);
 });
 
 inputSearch.addEventListener("input", function (event) {
@@ -46,10 +66,7 @@ inputSearch.addEventListener("input", function (event) {
   // 2. Tenemos que utilizar adecuadamente el método filter para mirar si el campo c.name.official incluye el substring de inputSearch.value
 
   // Corregir a las 10.52
-  const filteredCountries = countries.filter((c) =>
-    c.name.common.toLowerCase().includes(inputSearch.value.toLowerCase())
-  );
-
+  const filteredCountries = filterCountries(countries);
   updateCountries(filteredCountries);
 });
 
